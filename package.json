@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha",
+    "test": "./node_modules/.bin/lab -c -r tap -p",
     "lint": "./node_modules/gulp/bin/gulp.js lint",
     "release": "./node_modules/gulp/bin/gulp.js publish"
   },
@@ -32,20 +32,34 @@
   },
   "devDependencies": {
     "chai": "^1.9.0",
+    "gulp": "^3.5.5",
+    "gulp-bump": "^0.1.6",
+    "gulp-cached": "0.0.3",
+    "gulp-exec": "^1.0.4",
+    "gulp-git": "^0.3.3",
+    "gulp-jscs": "^0.3.2",
+    "gulp-jshint": "^1.5.0",
+    "gulp-mocha": "^0.4.1",
+    "gulp-todo": "^0.1.5",
+    "gulp-util": "~2.2.14",
+    "jshint-stylish": "^0.1.5",
+    "lab": "^3.0.0",
+    "minimist": "0.0.8",
     "mocha": "^1.17.1",
     "sinon": "^1.8.2",
     "sinon-chai": "^2.5.0",
-    "gulp": "^3.5.5",
-    "gulp-jshint": "^1.5.0",
-    "gulp-cached": "0.0.3",
-    "jshint-stylish": "^0.1.5",
-    "gulp-jscs": "^0.3.2",
-    "gulp-exec": "^1.0.4",
-    "gulp-mocha": "^0.4.1",
-    "gulp-todo": "^0.1.5",
-    "minimist": "0.0.8",
-    "gulp-bump": "^0.1.6",
-    "gulp-git": "^0.3.3",
-    "gulp-util": "~2.2.14"
+    "testling": "^1.6.1"
+  },
+  "testling": {
+    "files": "test/*.js",
+    "browsers": [
+      "ie/8..latest",
+      "chrome/28..latest",
+      "firefox/16..latest",
+      "safari/latest",
+      "iphone/6",
+      "ipad/6",
+      "android-browser/latest"
+    ]
   }
 }
